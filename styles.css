@@ -1,0 +1,65 @@
+*{
+    box-sizing: content-box;
+    color: blanchedalmond;
+    text-shadow: -2px 2px 0 rgb(0, 0, 0);
+}
+header{
+    background-image:url(wp1968192.jpg);
+    text-shadow: -2px 2px 0 orangered;
+    padding: none;
+    font-size: 30px;
+}
+body{
+    background-image: url(lavaleaper-background.jpg) ;
+    background-repeat: no-repeat;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    text-align:center;
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.picture1{
+    display: flex;
+    flex-direction: column;
+}
+#Rock1{
+    height: 216px;
+    width: 384px;
+    border-radius: 10px;
+    border-color:black;
+    background-size: cover;
+    background-image: url( rock1.jpg);
+    background-repeat: no-repeat;
+}
+#Rock1:hover{
+    border-color:blanchedalmond;
+}
+#Rock2{
+    height: 216px;
+    width: 384px;
+    border-radius: 10px;
+    border-color: black;
+    background-size: cover;
+    background-image: url( rock2.jpg);
+    background-repeat: no-repeat;
+}
+#Rock2:hover{
+    border-color:blanchedalmond;
+}
+#reset{
+    border-radius: 10px;
+    border-color: black;
+    background-color: rgb(80, 49, 49);
+}
+#reset:hover{
+    border-color: blanchedalmond;
+}

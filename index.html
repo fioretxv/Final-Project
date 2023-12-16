@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lava Leaper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <hr>
+  <header>
+   <h1>Lava Leaper</h1>
+  </header>
+  <hr>
+  <div class="content">
+    <div class="intro">
+        <h1>On no!</h1>
+        <p>You've fallen into a volcano! 
+          <br>
+            The only way out is to climb, but be careful, only half the rocks are cool enough to touch!
+        </p>
+        <h1>Pick a Rock to Start Climbing to the Top!</h1>
+    </div>
+    <br>
+    <main class="Choose">
+        <section id="choice">
+          <h2>You Choose . . .</h2>
+          <div class="images">
+            <div class="picture1">
+              <button id="Rock1" onclick="run('Rock 1')"></button>
+              <figcaption>Rock 1</figcaption>
+            </div>
+            <div class="picture2">
+              <button id="Rock2" onclick="run('Rock 2')"></button>
+              <figcaption>Rock 2</figcaption>
+            </div>
+          </div>
+        </section>
+        <section id="output">
+          <h2>The Correct Rock Is...</h2>
+          <h2 class="answer1"> <span id="chance"></span></h2>
+        </section>
+      </main>
+      <section class="scoreboard">
+        <p><span id="result"></span></p>
+        <h2 class="answer2">You've Played <span id="count">0</span> Games and Made it <span id="wins">0</span> Meters Higher!</p>
+          <div class="reset">
+            <button id="reset" onclick="reset()"><p>Reset Score</p></button>
+           </div>
+        </div>
+      </section>
+ <script src="script.js"></script>
+</body>
+</html>
