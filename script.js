@@ -71,7 +71,6 @@ function run(x) {
 
     let toohot = document.getElementById('burned');
     toohot.innerText = burn;
-
 } }
 function reset(){
     burn = 0;
