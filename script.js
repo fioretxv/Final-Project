@@ -1,16 +1,19 @@
 let timesplayed =0;
 let rocksclimb =0;
+let burn =0;
 function run(x) {
+    let percent;
+    let chanceresult;
+    let gameresult;
+    let timesplayed = sessionStorage.getItem("gameCount");
     let rocksclimb = sessionStorage.getItem("won");
     if (rocksclimb >= 10) {
         alert("You Made it Out! Reset Score to Try Again!")
-    } else {
-    let timesplayed = sessionStorage.getItem("gameCount");
+    } else if (burn >= 3) {
+        alert("Your Burned Hand Made You Fall! Reset to Try Again!")
+    }   else {
     let choiceresult = x;
-    let randNum = Math.floor(Math.random() * 10);
-    let chanceresult;
-    let percent;
-    let gameresult;
+    let randNum = Math.floor(Math.random() * 2) + 1;
     if (randNum === 1) {
         chanceresult = 'Rock 1';
     } else {
@@ -20,7 +23,8 @@ function run(x) {
         gameresult = "You climbed higher!";
         rocksclimb++;
     } else {
-        gameresult = "That Rock is Too Hot!";
+        gameresult = "That Rock is Too Hot, You Got Burned!";
+        burn++;
     };
     timesplayed++;
     if (rocksclimb === 1) {
@@ -43,11 +47,9 @@ function run(x) {
         percent = 'You are 90% to the top!';
     }else if (rocksclimb === 10) {
         percent = 'You Climbed Out of the Volcano!';
+        alert("You Made it Out! Reset Score to Try Again!")
     }else {
         percent = 'You Climbed no Further!';
-    };
-   if (rocksclimb === 10){
-        alert("You Made it Out! Reset Score to Try Again!")
     };
 
     let percentclimb = document.getElementById('percent');
@@ -61,15 +63,20 @@ function run(x) {
 
     let gameCount = document.getElementById('count');
     gameCount.innerText = timesplayed;
-    sessionStorage.setItem("gameCount",timesplayed)
+    sessionStorage.setItem("gameCount",timesplayed);
     
     let won = document.getElementById('wins');
     won.innerText = rocksclimb;
-    sessionStorage.setItem("won",rocksclimb)
+    sessionStorage.setItem("won",rocksclimb);
+
+    let toohot = document.getElementById('burned');
+    toohot.innerText = burn;
+
 } }
 function reset(){
-    sessionStorage.setItem("won",0);
+    burn = 0;
     sessionStorage.setItem("gameCount",0);
-    document.getElementById('wins').innerHTML = sessionStorage.getItem("won");
+    sessionStorage.setItem("won",0);
     document.getElementById('count').innerHTML = sessionStorage.getItem("gameCount");
+    document.getElementById('wins').innerHTML = sessionStorage.getItem("won");
 }
